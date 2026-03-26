@@ -1,3 +1,5 @@
+//  Write a program to declare a pointer to a pointer and print the value and address of a variable using the pointer to pointer.
+
 #include <stdio.h>
 
 int main()
