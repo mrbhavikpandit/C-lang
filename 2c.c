@@ -1,3 +1,5 @@
+// Write a function that takes an integer as an argument and returns 1 if it is even and 0 if it is odd.
+
 #include <stdio.h>
 
 int checkEven(int n)
