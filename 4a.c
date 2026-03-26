@@ -1,4 +1,4 @@
-// a. Define a structure for a student with fields for name, roll number and marks. Write a program to declare a structure variable and print the details.
+//  Define a structure for a student with fields for name, roll number and marks. Write a program to declare a structure variable and print the details.
 
 #include <stdio.h>
 struct student
