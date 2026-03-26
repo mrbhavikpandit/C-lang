@@ -1,3 +1,5 @@
+// Write a program to demonstrate accessing structure membersusing pointers.
+
 #include <stdio.h>
 
 struct student
