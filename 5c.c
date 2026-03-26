@@ -1,4 +1,4 @@
-// c. Write a program to demonstrate accessing array elements using a pointer.
+//  Write a program to demonstrate accessing array elements using a pointer.
 
 #include <stdio.h>
 
