@@ -1,3 +1,4 @@
+//  Implement a string function to compare two strings.
 #include <stdio.h>
 
 int compare(char a[], char b[])
