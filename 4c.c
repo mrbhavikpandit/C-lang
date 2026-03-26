@@ -1,3 +1,5 @@
+// c. Create an array of structures to store information for 5 students. Write a program to input and display this information.
+
 #include <stdio.h>
 
 struct student
