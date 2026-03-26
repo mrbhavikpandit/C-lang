@@ -1,3 +1,5 @@
+// Develop a C Program to open and close a file.
+
 #include <stdio.h>
 
 int main()
