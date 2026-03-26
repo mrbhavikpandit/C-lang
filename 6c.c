@@ -1,3 +1,5 @@
+// Develop a C program to demonstrate ftell,rewind, fseek.
+
 #include <stdio.h>
 
 int main()
