@@ -1,3 +1,4 @@
+// Write a program to extract a substring from a given string.
 #include <conio.h>
 #include <stdio.h>
 #include <string.h>
