@@ -1,3 +1,6 @@
+// Write a function that takes a string as an argument and returns its length.
+
+
 #include <stdio.h>
 
 int length(char str[])
