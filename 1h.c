@@ -1,3 +1,5 @@
+// Compare the outputs when using Array of Characters and String.
+
 #include <stdio.h>
 
 int main()
