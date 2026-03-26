@@ -1,3 +1,5 @@
+//  Create a structure Book with members title, author, and price. Write a program to assign values to these members and display them.
+
 #include <stdio.h>
 
 struct book
