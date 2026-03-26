@@ -1,3 +1,5 @@
+//  Define a structure Date with day, month, and year. Create another structure Employee with members name, salary, and a nested Date structure for the joining date. Write a program to input and displaythe employee details.
+
 #include <stdio.h>
 
 struct date
