@@ -1,3 +1,5 @@
+// Implement a function that calculates the square of a number and returns the result.
+
 #include <stdio.h>
 
 int square(int n)
