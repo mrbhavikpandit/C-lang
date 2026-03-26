@@ -1,3 +1,5 @@
+//  Write a program to demonstrate the declaration, initialization, and dereferencing of a pointer.
+
 #include <stdio.h>
 
 int main()
