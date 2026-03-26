@@ -1,3 +1,5 @@
+//  Write a program to declare a pointer to an array and print the elements using that pointer.
+
 #include <stdio.h>
 
 int main()
