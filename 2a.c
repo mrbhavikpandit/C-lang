@@ -1,3 +1,5 @@
+// Write a program with a function that prints a message without returning any value.
+
 #include <stdio.h>
 
 void message()
