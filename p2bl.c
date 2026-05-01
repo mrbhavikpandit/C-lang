@@ -37,6 +37,11 @@
 #define CLEAR_SCREEN() system("clear")
 #endif
 
+/* Drain stdin up to and including the next newline (or EOF).
+ * Prevents an infinite loop when stdin reaches EOF and replaces
+ * the bare while(getchar()!='\n') pattern throughout the file. */
+#define FLUSH_INPUT() do { int _c; while ((_c = getchar()) != '\n' && _c != EOF); } while (0)
+
 /* ========== STRUCTURES ========== */
 struct Product
 {
@@ -115,7 +120,7 @@ int main()
         if (scanf("%d", &choice) != 1)
         {
             /* Flush invalid non-numeric input */
-            while (getchar() != '\n');
+            FLUSH_INPUT();
             printf(COLOR_RED "  Invalid input! Please enter a number.\n" COLOR_RESET);
             continue;
         }
@@ -135,10 +140,9 @@ int main()
             printf(COLOR_RED "  Invalid choice! Try again.\n" COLOR_RESET);
         }
 
-        /* Pause so the user can read any output before clearing */
+        /* Drain any leftover input, then wait for the user to press Enter */
         printf(COLOR_CYAN "\n  Press Enter to continue..." COLOR_RESET);
-        while (getchar() != '\n');   /* consume newline left by scanf */
-        getchar();                   /* wait for the user to press Enter */
+        FLUSH_INPUT();
     }
 }
 
@@ -225,7 +229,7 @@ void addProduct()
     printf(COLOR_CYAN "  Enter Product Code: " COLOR_RESET);
     if (scanf("%d", &products[product_count].code) != 1)
     {
-        while (getchar() != '\n');
+        FLUSH_INPUT();
         printf(COLOR_RED "  Invalid code! Product not added.\n" COLOR_RESET);
         return;
     }
@@ -234,7 +238,7 @@ void addProduct()
     printf(COLOR_CYAN "  Enter Product Name: " COLOR_RESET);
     if (scanf(" %49[^\n]", products[product_count].name) != 1)
     {
-        while (getchar() != '\n');
+        FLUSH_INPUT();
         printf(COLOR_RED "  Invalid name! Product not added.\n" COLOR_RESET);
         return;
     }
@@ -244,7 +248,7 @@ void addProduct()
     printf(COLOR_CYAN "  Enter Product Price: " COLOR_RESET);
     if (scanf("%f", &price) != 1 || price <= 0.0f)
     {
-        while (getchar() != '\n');
+        FLUSH_INPUT();
         printf(COLOR_RED "  Invalid price! Price must be a positive number. Product not added.\n" COLOR_RESET);
         return;
     }
@@ -276,7 +280,7 @@ void generateBill()
 
         if (scanf("%d", &code) != 1)
         {
-            while (getchar() != '\n');
+            FLUSH_INPUT();
             printf(COLOR_RED "  Invalid input! Please enter a numeric code.\n" COLOR_RESET);
             continue;
         }
@@ -301,7 +305,7 @@ void generateBill()
                 printf(COLOR_CYAN "  Enter Quantity: " COLOR_RESET);
                 if (scanf("%d", &quantity) != 1 || quantity <= 0)
                 {
-                    while (getchar() != '\n');
+                    FLUSH_INPUT();
                     printf(COLOR_RED "  Invalid quantity! Must be a positive number.\n" COLOR_RESET);
                     break;
                 }
